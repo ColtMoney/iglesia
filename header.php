@@ -9,48 +9,85 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-	<header class="top_header">
+	
+	<header class="top-header">
+
 		<div class="wrapper cf">
-			<div class="header_third search_section menu_buttom cf">
-				<div class="menu_icon">
+
+			<div class="header-third search-section menu-button cf">
+				<div class="menu-icon">
 					<i class="fa fa-bars" aria-hidden="true"></i>
 					<i class="fa fa-times" style="display: none;" aria-hidden="true"></i>
 				</div>
-				<div class="search_box"><?php echo get_search_form(); ?></div>
+				<div class="search-box">
+					<?php echo get_search_form(); ?>
+				</div>
 			</div>
-			<div class="header_third logo_section">
-				<?php if(ale_get_option('sitelogo')){ ?>
-					<a href="<?php echo home_url("/"); ?>" class="logo_link"><img src="<?php echo ale_get_option('sitelogo'); ?>" /></a>
+
+			<div class="header-third logo-section">
+				<?php if(ale_get_option('sitelogo')) { ?>
+					<a href="<?php echo home_url('/'); ?>" class="logo-link"><img src="<?php echo ale_get_option('sitelogo'); ?>" alt=""></a>
 				<?php } ?>
 			</div>
-			<div class="header_third social_section">
-				<?php if(ale_get_option('yt')){ ?><a href="<?php echo ale_get_option('yt') ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a><?php } ?>
-				<?php if(ale_get_option('insta')){ ?><a href="<?php echo ale_get_option('insta') ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a><?php } ?>
-				<?php if(ale_get_option('twi')){ ?><a href="<?php echo ale_get_option('twi') ?>"><i class="fa fa-twitter-square" aria-hidden="true"></i></a><?php } ?>
-				<?php if(ale_get_option('fb')){ ?><a href="<?php echo ale_get_option('fb') ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>
+
+			<div class="header-third social-section">
+
+				<?php if(ale_get_option('yt')) { ?>
+					<a href="<?php echo ale_get_option('yt'); ?>">
+						<i class="fa fa-youtube" aria-hidden="true"></i>
+					</a>
+				<?php } ?>
+
+				<?php if(ale_get_option('insta')) { ?>
+				<a href="<?php echo ale_get_option('insta'); ?>">
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+				</a>
+				<?php } ?>
+
+				<?php if(ale_get_option('twi')) { ?>
+				<a href="<?php echo ale_get_option('twi'); ?>">
+					<i class="fa fa-twitter-square" aria-hidden="true"></i>
+				</a>
+				<?php } ?>
+
+				<?php if(ale_get_option('fb')) { ?>
+				<a href="<?php echo ale_get_option('fb'); ?>">
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+				</a>
+				<?php } ?>
+
 			</div>
+
 		</div>
-		<nav class="top_navigation">
+		
+		<nav class="top-navigation">
+			
 			<div class="wrapper">
+
 				<?php
 				if ( has_nav_menu( 'header_menu' ) ) {
 					wp_nav_menu(array(
 						'theme_location'=> 'header_menu',
 						'menu'			=> 'Header Menu',
-						'menu_class'	=> 'ale_headermenu cf',
+						'menu_class'	=> 'headermenu cf',
 						'walker'		=> new Aletheme_Nav_Walker(),
 						'container'		=> '',
 					));
 				}
 				?>
-				<div class="donate_button">
-					<a href="<?php //echo ale_get_option('donate_link'); ?>"><?php _e('Donate','iglesia'); ?></a>
+
+				<div class="donate-button">
+					<a href="<?php //echo ale_get_option("donate_link"); ?>"><?php  _e("Donate", "iglesia"); ?></a>
 				</div>
+
 			</div>
+			
 		</nav>
+
 	</header>
-	<?php if(!is_page_template('page-home.php')){ ?>
-		<section class="inner_header">
+
+	<?php if(!is_page_template('page-home.php')) { ?>
+		<section class="inner-header">
 			<div class="wrapper">
 				<?php echo get_breadcrumbs(); ?>
 			</div>

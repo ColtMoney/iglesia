@@ -8,7 +8,7 @@
     <!-- Comments -->
     <div class="comments-container">
 
-        <h3 class="comments_section_title"><?php _e('Comments','aletheme'); ?></h3>
+        <h3 class="comments-section-title"><?php _e('Comments','aletheme'); ?></h3>
 
 
             <?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
@@ -39,17 +39,17 @@
 
 
         <!-- Comment Form -->
-        <div class="add_comment_form">
+        <div class="add-comment-form">
         <a name="respond"></a>
         <?php if (comments_open()) : ?>
             <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
                 <p class="info"><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'aletheme'), wp_login_url(get_permalink())); ?></p>
             <?php else : ?>
                 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" id="comment-form" method="post" class="comment-form">
-                    <div class="form_title">
-                        <span class="left_line"></span>
+                    <div class="form-title">
+                        <span class="left-line"></span>
                         <span class="title"><h4><?php _e('Leave a comment','aletheme'); ?> <?php cancel_comment_reply_link(); ?></h4></span>
-                        <span class="right_line"></span>
+                        <span class="right-line"></span>
                     </div>
                     <?php if (is_user_logged_in()) : ?>
                         <p class="info"><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'aletheme'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'aletheme'); ?>"><?php _e('Log out &raquo;', 'aletheme'); ?></a></p>

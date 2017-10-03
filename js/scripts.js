@@ -8,7 +8,8 @@ jQuery(function($) {
         smoothHeight:true,
         prevText:"<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>",
         nextText: "<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>",
-        controlNav: false
+        controlNav: false,
+        slideshow: false
     });
 
     $('.homeslider').flexslider({
@@ -18,31 +19,30 @@ jQuery(function($) {
         nextText: "<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>",
         controlNav: false
     });
-
-
-    $('.homeslider .flex-viewport').css('overflow','visible');
-
-
-    $('.menu_icon i.fa-bars').on('click',function(){
-        $('.menu_icon i.fa-bars').css('display','none');
-        $('.menu_icon i.fa-times').css('display','inline-block');
-
-        $('.top_navigation').css('display','block');
-    });
-
-    $('.menu_icon i.fa-times').on('click',function(){
-        $('.menu_icon i.fa-bars').css('display','inline-block');
-        $('.menu_icon i.fa-times').css('display','none');
-
-        $('.top_navigation').css('display','none');
-    });
-
+    
 
     $('.latest-tweets').flexslider({
-        animation:'slide',
-        directionNav:false,
-        selector: "ul > li"
+        animation: 'slide',
+        selector: 'ul > li',
+        directionNav: false,
     });
+
+    $(".menu-icon i.fa-bars").on("click", function () {
+       $(".top-navigation").css("display", "block");
+       $(".menu-icon i.fa-times").css("display", "inline-block");
+
+       $(".menu-icon i.fa-bars").css("display", "none");
+    });
+
+    $(".menu-icon i.fa-times").on("click", function () {
+        $(".top-navigation").css("display", "none");
+        $(".menu-icon i.fa-bars").css("display", "inline-block");
+
+        $(".menu-icon i.fa-times").css("display", "none");
+    });
+
+    $(".homeslider .flex-viewport").css("overflow", "visible");
+    
 });
 
 Modernizr.addTest('ipad', function () {

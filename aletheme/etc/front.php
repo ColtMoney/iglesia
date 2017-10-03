@@ -158,7 +158,7 @@ function aletheme_comment_default($comment, $args, $depth) {
 				<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.','aletheme') ?></em>
 				<br />
 			<?php endif; ?>
-			<?php comment_text() ?>
+			<?php comment_text(); ?>
 		</div>
 
     </div>
